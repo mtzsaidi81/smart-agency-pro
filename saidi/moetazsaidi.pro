@@ -1,5 +1,5 @@
 QT       += core gui sql
-
+QT       +=serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -16,32 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
+    client.cpp \
     connexion.cpp \
-    hebergement.cpp \
+    login.cpp \
     main.cpp \
-    menu.cpp \
-    menuu.cpp \
-    tour.cpp \
-    widget.cpp \
-    widget1.cpp
+    mainwindow.cpp \
+    type_cl.cpp
 
 HEADERS += \
+    arduino.h \
+    client.h \
     connexion.h \
-    hebergement.h \
-    menu.h \
-    menuu.h \
-    tour.h \
-    widget.h \
-    widget1.h
+    login.h \
+    mainwindow.h \
+    type_cl.h
 
 FORMS += \
-    menuu.ui \
-    widget.ui \
-    widget1.ui
+    login.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES +=
